@@ -1,0 +1,25 @@
+{
+  "name": "example app",
+  "authors": [
+    "ADP Marketplace"
+  ],
+  "description": "example app using ADP client lib",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.14.7",
+    "jquery": "~2.2.0",
+    "backbone.marionette": "marionette#~2.4.4",
+    "handlebars": "~4.0.5",
+    "bootstrap": "~3.3.6"
+  }
+}

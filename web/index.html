@@ -1,0 +1,152 @@
+<html>
+	<head>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+	</head>
+
+	<div id="main"></div>
+
+	<script type="text/template" id="login">
+		<form action="/authenticate">
+			<button class="btn btn-info" id="loginButton">Log in</button>
+		</form>
+	</script>
+	
+	<script type="text/template" id="loggedin">
+		<button class="btn btn-danger" id="logoutButton">Log out of ADP</button><hr>
+	</script>
+
+	<script type="text/template" id="userinfo">
+		
+		<form class="form-inline">
+			<label for="firstName">First Name:</label> <input readonly name="firstName" id="firstName" type="text" class="form-control" value="<%=given_name%>">
+			<label for="lastName">Last Name:</label> <input readonly name="lastName" id="lastName" type="text" class="form-control" value="<%=family_name%>">
+			<button class="btn bluebtn" id="getUserInfo">Get Info From Talent System</button>
+		</form>
+	</script>
+	<script type="text/template" id="cardtemplate">
+		<div class="creditCard thecc">
+			<table width="100%" height="100%">
+				<tr>
+					<td width="33%" valign="top" align="center"><img class="widgetLeft widgetInactive" src="./img/adp-widget-logo.png"></td>
+					<td width="33%" valign="top" align="center"><img class="widgetCenter widgetInactive" src="./img/adp-widget-logo.png"></td>
+					<td width="33%" valign="top" align="center"><img class="widgetRight widgetInactive" src="./img/adp-widget-logo.png"></td>
+				</tr>
+				<tr><td colspan=3>0000 0000 0000 0000</td></tr>
+				<tr>
+					<td colspan=2 height="20%">
+						<label><%=name%></label>
+					</td>
+					<td align="right"><img src="img/visa.png"></td>
+				</tr>
+			</table>
+		</div>
+	</script>
+
+	<script type="text/template" id="steptabs">
+		<div class="container">
+		  <div class="row">
+		    <div >
+		      <div class="tabs-left">
+		        <ul class="nav nav-tabs">
+		          <li class="active"><a id="alinka" href="#a" data-toggle="tab">1</a></li>
+		          <li><a href="#b" id="alinkb" data-toggle="tab">2</a></li>
+		          <li><a href="#c" id="alinkc" data-toggle="tab">3</a></li>
+		          <li><a href="#d" id="alinkd" data-toggle ="tab">4</a></li>
+		        </ul>
+		        <div class="tab-content">
+		          <div class="tab-pane active" id="a">
+		          	<h4 class="bluetext bluehead">Step 1: Pull Employee Name from Talent system</h4>
+		          	<div>
+		          		<form class="form-inline">
+			          		<button class="btn bluebtn" id="getEmpName">Get Employee Name</button>
+			          		<input readonly id="userinfoname" class="form-control" type="text"> 
+		          		</form>
+		          	</div>
+		          	<br><br><br><br>
+		          	<a href="#" class="sendright handleNext" >Next <span class="glyphicon glyphicon-chevron-right"></span></a>
+		          </div>
+		          <div class="tab-pane" id="b">
+		          	<h4 class="bluetext bluehead">Step 2: Choose Layout and Design</h4>
+		          	<table class="layouttable">
+		          		<tr>
+		          			<td class="layoutcell"><h6>Layout</h6></td>
+		          			<td class="layoutcell"><img class="layoutImg" pos="Left" src="./img/top-left.png"></td>
+		          			<td class="layoutcell"><img class="layoutImg" pos="Center" src="./img/top-center.png"></td>
+		          			<td class="layoutcell"><img class="layoutImg" pos="Right" src="./img/top-right.png"></td>
+		          		</tr>
+		          		<tr>
+		          			<td class="layoutcell"><h6>Design</h6></td>
+		          			<td class="layoutcell"><img class="designImg" add="solidCard" src="./img/solid.png"></td>
+		          			<td class="layoutcell"><img class="designImg" add="gradientCard" src="./img/gradient.png"></td>
+		          			<td class="layoutcell"><img class="designImg" add="patternCard" src="./img/pattern.png"></td>
+		          		</tr>
+		          	</table>
+		          	<a href="#" class="sendright handleNext" >Next <span class="glyphicon glyphicon-chevron-right"></span></a>
+		          </div>
+		          <div class="tab-pane" id="c">
+		          	<h4 class="bluetext bluehead">Step 3: Confirm and Verify</h4>
+		          	<div>
+		          		<label>Employee Name:</label> <span id="employeename"></span>
+		          	</div>
+		          	<div>
+		          		<label>Company Logo:</label> <span >Acme Widget Corp.</span>
+		          	</div>
+		          	<div>
+		          		<label>Logo Layout:</label> <span id="logolayout"></span>
+		          	</div>
+		          	<div>
+		          		<label>Background Design:</label> <span id="logodesign"></span>
+		          	</div>
+								<button class="btn bluebtn handleConfirm">Confirm</button>
+		          </div>
+		          <div class="tab-pane" id="d">
+		          	<h4 class="bluetext bluehead">Step 4: Success</h4>
+		          	<div align="center"><img src="./img/success-to-email.gif" width="50%" height="50%"></div>
+		          	<div align="center">
+		          		<div>A confirmation email has been sent to <span class="bluetext" id="successemployeename"></span></div>
+		          		<div>at the following address: <span class="bluetext" id="successemail"></span>
+
+		          	</div>
+		          </div>
+		        </div><!-- /tab-content -->
+		      </div><!-- /tabbable -->
+		    </div><!-- /col -->
+		  </div><!-- /row -->
+		</div><!-- /container -->
+
+	</script>
+
+	<script type="text/template" id="pageview">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		  <div class="row">
+		  	<div class="col-md-8">
+		  		<span><img height="45" alt="Brand" src="img/adp.png"> Non-payroll Incentive Card Administration</span>
+		  	</div>
+				<div class="col-md-4">
+					<div id="logincontainer"></div>
+					<div id="loggedincontainer"></div>
+				</div>		  	
+		  </div>
+
+		  </div>
+		  <div class="panel-body">
+				<div id="userinfocontainer"></div>
+				<div class="row" >
+					<div class="col-sm-4" id="creditcardcontainer"></div>
+					<div class="col-sm-4" id="steptabscontainer"></div>
+				</div>
+
+		  </div>
+		</div>
+	</script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+	<script src="bower_components/backbone/backbone.js"></script>
+	<script src="bower_components/backbone.marionette/lib/backbone.marionette.js"></script>
+	<script src="js/views.js"></script>
+	<script src="js/app.js"></script>
+</html>
+

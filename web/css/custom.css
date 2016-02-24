@@ -1,0 +1,152 @@
+
+.creditCard {
+	border-radius: 25px;
+  border: 2px solid #000000;
+  padding: 20px; 
+  width: 400px;
+  height: 225px;
+	font-family: "Lucida Console";
+	/*background-image: url('../img/adpbg.png');*/
+}
+
+.widgetInactive {
+	display: none;
+
+}
+
+.patternCard {
+	background-image: url('../img/swirl_pattern.png');
+}
+
+.gradientCard {
+	background: rgb(179,220,237); /* Old browsers */
+	background: -moz-linear-gradient(45deg,  rgba(179,220,237,1) 0%, rgba(41,184,229,1) 7%, rgba(188,224,238,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(45deg,  rgba(179,220,237,1) 0%,rgba(41,184,229,1) 7%,rgba(188,224,238,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(45deg,  rgba(179,220,237,1) 0%,rgba(41,184,229,1) 7%,rgba(188,224,238,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.solidCard {
+	background-color: lightblue;
+}
+.widgetActive {
+	display: inline;	
+	width: 50px;
+	height: 33px;
+}
+
+/*div {
+	border:1px solid black;
+}*/
+
+.layouttable {
+}
+
+.layoutcell {
+	padding:5px;
+	margin:2px;
+}
+body {
+  background-color: #ddd;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+.badge {
+  background-color: #777;
+}
+.nav-tabs > li > a {
+  border-radius: 0 0 0 0 !important;
+}
+
+.layoutImgBorder {
+	border:2px solid #4A90E2;
+	border-radius: 4px;
+}
+.designImgBorder {
+	border:2px solid #4A90E2;
+	border-radius: 4px;
+}
+.sendright {
+	float: right;
+}
+
+.tabs-left {
+  vertical-align: top;
+  height: 400px;
+  width:500px;
+}
+
+.nav-tabs {
+  float: left;
+  border-bottom: 0;
+  font-weight: bold;
+  height: 225px;
+}
+.nav-tabs li {
+  float: none;
+  margin: 0;
+}
+.nav-tabs li a {
+  margin-right: 0;
+  border: 0;
+  color: #fff;
+  background-color: #205A9E;
+  height: 56px;
+}
+.nav-tabs li a:hover {
+  background-color: #444;
+}
+.nav-tabs .glyphicon {
+  color: #fff;
+}
+.nav-tabs .active .glyphicon {
+  color: #333;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: 0;
+  background-color: #E7E7E7;
+
+}
+
+.bluebtn, .bluebtn:hover, .bluebtn:active, .bluebtn:focus {
+	background-color: #4A90E2;
+	border-color: #E7E7E7;
+	color: white;
+}
+
+.bluetext {
+	color: #4A90E2;
+}
+
+.bluehead {
+	font-weight: bold;
+}
+/*
+.tab-content {
+  margin-left: 45px;
+}*/
+.tab-content .tab-pane {
+  display: none;
+  background-color: #fff;
+  padding: 1rem;
+  overflow-y: auto;
+}
+.tab-content .active {
+  display: block;
+  background-color: #E7E7E7;
+
+}
+
+.list-group {
+  width: 100%;
+}
+.list-group .list-group-item {
+  height: 50px;
+}
+.list-group .list-group-item h4, .list-group .list-group-item span {
+  line-height: 11px;
+}
